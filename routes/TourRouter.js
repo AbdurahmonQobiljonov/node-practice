@@ -7,11 +7,11 @@ const {
   deleteTour,
 } = require('../controllers/tourController')
 
-const useParam = require('../middlewares/param')
+// const useParam = require('../middlewares/param')
 
 const tourRouter = express.Router()
 
-tourRouter.param('id', useParam)
+// tourRouter.param('id', useParam)
 
 tourRouter.get('/', getAllTours)
 tourRouter.post('/', postTour)

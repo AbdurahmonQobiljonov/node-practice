@@ -14,6 +14,14 @@ const TourSchema = Schema({
     type: Number,
     required: [true, 'A tour must have a price'],
   },
+  duration: {
+    type: Number,
+    required: true,
+  },
+  difficulty: {
+    type: String,
+    default: 'easy'
+  }
 })
 
 module.exports = model('Tour', TourSchema)
