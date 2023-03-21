@@ -5,10 +5,15 @@ const TourSchema = Schema({
     type: String,
     required: [true, 'A tour must have a name'],
     unique: true,
+    trim: true,
   },
-  rating: {
+  ratingsAverage: {
     type: Number,
     default: 4.5,
+  },
+  ratingsQuantity: {
+    type: Number,
+    default: 0,
   },
   price: {
     type: Number,
@@ -16,12 +21,36 @@ const TourSchema = Schema({
   },
   duration: {
     type: Number,
-    required: true,
+    required: [true, 'A tour must have a duration'],
   },
   difficulty: {
     type: String,
-    default: 'easy'
-  }
+    required: [true, 'A tour must have a difficulty'],
+  },
+  maxGroupSize: {
+    type: Number,
+    required: [true, 'A tour must have a group size'],
+  },
+  priceDiscount: Number,
+  summary: {
+    type: String,
+    trim: true,
+    required: [true, 'A tour must have a description'],
+  },
+  description: {
+    type: String,
+    trim: true,
+  },
+  imageCover: {
+    type: String,
+    required: [true, 'A tour must have a cover image'],
+  },
+  images: [String],
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
+  startDates: [Date],
 })
 
 module.exports = model('Tour', TourSchema)
