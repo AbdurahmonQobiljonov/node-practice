@@ -1,8 +1,8 @@
 const dotenv = require('dotenv')
 const http = require('http')
-const app = require('./index')
 
 dotenv.config({ path: './.env' })
+const app = require('./index')
 
 const PORT = process.env.PORT || 8000
 const server = http.createServer(app)
